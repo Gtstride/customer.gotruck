@@ -1,0 +1,28 @@
+$colors: (
+  blue: #29489b,
+  yellow: #fcab31,
+  gray: #595959,
+  lightGray: #d0d0d0,
+  darkGray: #3c3c3c,
+  white: #ffffff,
+  kbwhite: #d8e3ff,
+  green: #36b37e,
+  black: #282a3c,
+  red: #ff5151,
+  lightBlue: rgba(41, 72, 155, 0.31),
+  lightBlueTwo: rgba(41, 72, 155, 0.5),
+  subtleBlue: rgba(41, 72, 155, 1),
+  lightGreen: #cee9e1,
+  lightAsh: #dddbd7,
+  grayShade: #475f7b,
+  subtleGray: #828d99,
+  faintBlue: #d4e5f9,
+  fadedBlue: #f5f7fb,
+  secondaryBlue: #29489b,
+  lightBlack: rgba(0, 0, 0, 0.16),
+  lightWhite: rgba(255, 255, 255, 0.5),
+);
+
+@function color($color) {
+  @return map-get($map: $colors, $key: $color);
+}

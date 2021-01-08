@@ -1,0 +1,14 @@
+{
+  "name": "Gotruc Customer Web App",
+  "short_name": "GoTruck Customer",
+  "icons": [
+      {
+          "src": "/android-chrome-144x144.png",
+          "sizes": "144x144",
+          "type": "image/png"
+      }
+  ],
+  "theme_color": "#27298d",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

@@ -1,0 +1,61 @@
+.dp-grid {
+  display: grid;
+}
+
+/* Template Columns */
+.grid-col-2-all {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+[data-grid-col*='2'] {
+  grid-template-columns: repeat(2, 250px);
+}
+
+[data-grid-col*='3'] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+[data-grid-col*='4'] {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+[data-grid-col*='6'] {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.leftActions[data-grid-col*='2'] {
+  grid-template-columns: repeat(2, 120px) !important;
+}
+
+.leftActions[data-grid-col*='3'] {
+  grid-template-columns: repeat(3, 120px) !important;
+  display: inherit;
+  padding: 5px;
+}
+
+.leftActions[data-grid-col*='3'].outlier {
+  grid-template-columns: repeat(3, 152px) !important;
+  display: inherit;
+  padding: 5px;
+}
+
+.leftActions[data-grid-col*='4'] {
+  grid-template-columns: repeat(4, 120px);
+}
+
+/* Column Gaps */
+.col-gap-10 {
+  column-gap: 10px;
+}
+
+.col-gap-20 {
+  column-gap: 20px;
+}
+
+.col-gap-30 {
+  column-gap: 30px;
+}
+
+.row-gap-20 {
+  row-gap: 20px;
+}

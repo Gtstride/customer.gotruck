@@ -81,9 +81,9 @@ function AuthorizePage() {
   //         <div className="confirmBody">
   //             <div className="success-icon-bg" />
   //             <h3 style={{ color: 'red'}}>Error</h3>
-  //             {/* <div className="continue-btn" onClick={this.resend}>
+  //             <div className="continue-btn" onClick={this.resend}>
   //                 {this.state.status}
-  //             </div> */}
+  //             </div>
   //         </div>
   //     );
   // }

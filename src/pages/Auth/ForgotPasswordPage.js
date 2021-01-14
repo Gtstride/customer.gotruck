@@ -17,7 +17,7 @@ function ForgotPasswordPage() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    setDocumentTitle('Kobo 360 - Customer ', 'Forgot Password');
+    setDocumentTitle('Gotruck - Customer ', 'Forgot Password');
   }, []);
 
   // #region Returns

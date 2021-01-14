@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getBusinessProfile, useFetch } from './APIs/Read';
 import TickerBanner from './components/General/TickerBanner';
-// import GlobalContent from './components/GlobalContent';
+import GlobalContent from './components/GlobalContent';
 import GlobalSideNav from './components/GlobalSideNav';
 import MainAppLoader from './components/Loaders/MainAppLoader';
 import { GlobalNavProvider } from './contexts/GlobalNavContext';
@@ -160,14 +160,14 @@ function MainApp(props) {
         <GlobalSideNav {...{ businessName: businessProfile.businessName, customerId: businessProfile.customerId }} />
         <ErrorBoundary>
           <GlobalNavProvider>
-            {/* <GlobalContent
+            <GlobalContent
               {...{
                 businessProfile,
                 isUserVerified: verified,
                 show,
                 fxParams: { sendVerification, resendVerification },
               }}
-            /> */}
+            />
             <div className='tickerWrap'>
               <TickerBanner {...{ isLoading, routes, index }} />
             </div>

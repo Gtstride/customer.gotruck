@@ -15,8 +15,8 @@ function LoginPage() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    setDocumentTitle('Kobo 360 - Customer ', 'Reset Password');
-  }, []);
+    setDocumentTitle('Gotruck - Customer ', 'Reset Password');
+  }, []); 
 
   // #region Returns
   return (

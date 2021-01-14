@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import { DriversColumns } from '../Tables/TableColumns';
 import { uuid, getDash } from '../../_utils/fx';

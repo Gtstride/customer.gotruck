@@ -20,7 +20,7 @@ function RegisterPage() {
   });
 
   useEffect(() => {
-    setDocumentTitle('Kobo 360 -  Customer', 'Register');
+    setDocumentTitle('Gotruck -  Customer', 'Register');
   }, [push]);
 
   return (

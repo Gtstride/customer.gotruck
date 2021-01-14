@@ -27,7 +27,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 if (process.env.NODE_ENV === 'production') {
   init({
-    dsn: 'https://df9cfde794584649a5c98708413707c4@sentry.io/1413468',
+    dsn: "https://7a62105b6bae434ea91a5423fcc35940@o504700.ingest.sentry.io/5591951",
   });
 }
 

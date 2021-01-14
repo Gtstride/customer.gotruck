@@ -14,8 +14,7 @@ import VerifyEmailBanner from './General/VerifyEmailBanner';
 import ContentLoader from './Loaders/ContentLoader';
 import PrivateRoute from './PrivateRoute';
 // code splitting
-// const BusinessProfilePage = lazy(() => import('../pages/SideNavPages/BusinessProfilePage'));
-const BusinessProfilePage = lazy(() => import ("../pages/SideNavPages/BusinessProfilePage"));
+const BusinessProfilePage = lazy(() => import('../pages/SideNavPages/BusinessProfilePage'));
 const UserProfilePage = lazy(() => import('../pages/SideNavPages/UserProfilePage'));
 const TransportersPage = lazy(() => import('../pages/SideNavPages/TransportersPage'));
 const WaybillTrackerPage = lazy(() => import('../pages/SideNavPages/WaybillTrackerPage'));

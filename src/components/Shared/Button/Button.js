@@ -1,5 +1,6 @@
 import * as React from 'react';
-import './Button.scss';
+// import './Button.scss';
+import "../../../scss/Button.scss"
 
 function Button(props) {
   return (

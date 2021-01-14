@@ -21,7 +21,7 @@ function LoginPage() {
   const [image, setImage] = useState('');
   const [blacklisted, setBlacklisted] = useState(0);
   const [customerId, setCustomerId] = useState(0);
-  const [subDomain, setSubDomain] = useState('Kobo 360 - Customer');
+  const [subDomain, setSubDomain] = useState('Gotruck - Customer');
 
   // const [notAvailable, setNotAvailable] = useState(false);
 
@@ -42,7 +42,7 @@ function LoginPage() {
               setImage(res.data.data.customer.image);
             }
             setCustomerId(res.data.data.customer.id);
-            setSubDomain(res.data.data.customer.business_name || 'Kobo 360 - Customer');
+            setSubDomain(res.data.data.customer.business_name || ' - Customer');
             setBlacklisted(res.data.data.customer.blacklisted);
             setShow(true);
           } else {
@@ -83,16 +83,12 @@ function LoginPage() {
               <div style={{ marginBottom: '.5em' }} />
             </PageTitle>
           ) : (
-            // <PageTitle>{t('common.dashboardTitle')}</PageTitle>
-            <PageTitle>{t('dashboardTitle')}</PageTitle>
-
+            <PageTitle>{t('common.dashboardTitle')}</PageTitle>
           )}
           <LoginForm {...{ push, customerId }} />
           {!show && (
             <div className='alternateAuth'>
-              {/* <Link to='/register'>{t('common.dontHaveAnAccount')}</Link> */}
-              <Link to='/register'>{t('dontHaveAnAccount')}</Link>
-
+              <Link to='/register'>{t('common.dontHaveAnAccount')}</Link>
             </div>
           )}
         </main>

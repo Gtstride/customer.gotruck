@@ -8,7 +8,7 @@ function PrivateRoute({ children, ...rest }) {
     <Route
       {...rest}
       render={({ location }) => {
-        if (ifThereIsAuser) {
+        if (!ifThereIsAuser) {
           return children;
         }
         return (

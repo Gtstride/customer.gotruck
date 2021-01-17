@@ -123,7 +123,7 @@ function LoginForm({ push, customerId }) {
         <form id='loginForm' noValidate onSubmit={handleSubmit}>
           <div className='formContentBlock'>
             <header className='formHeader'>
-              <h2 className='formTitle'>{t('common.signIn')}</h2>
+              <h2 className='formTitle'>{('common.signIn')}</h2>
             </header>
             <div className='formContent'>
               <div className='fields'>
@@ -184,9 +184,12 @@ function LoginForm({ push, customerId }) {
             </div>
           </div>
           <div className='cta dp-flex ju-cont-ce'>
-            <button type='submit' className='dp-flex' disabled={!(isValid && dirty) || isSubmitting}>
+            <Link to="/customer/dashboard" className='dp-flex' disabled={!(isValid && dirty) || isSubmitting}>
               {(isSubmitting && <ButtonLoader />) || <>{t('common.signIn')}</>}
-            </button>
+            </Link>
+            {/* <button type='submit' className='dp-flex' disabled={!(isValid && dirty) || isSubmitting}>
+              {(isSubmitting && <ButtonLoader />) || <>{t('common.signIn')}</>}
+            </button> */}
           </div>
         </form>
       </FormStyle>

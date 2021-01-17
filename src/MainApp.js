@@ -38,7 +38,10 @@ function MainApp(props) {
     user = JSON.parse(localStorage.getItem(`user-${customerId}`));
   }
   // #endregion
-  const [businessProfile, setBusinessProfile] = React.useState(null);
+  // const [businessProfile, setBusinessProfile] = React.useState(null);
+   const [businessProfile, setBusinessProfile] = React.useState({
+     businessName : "Go-Truck"
+   });
   const [show, setShow] = useState(false);
   const [verified, setVerified] = useState(0);
   const [routes, setRoutes] = useState([]);
@@ -50,122 +53,122 @@ function MainApp(props) {
   }, []);
 
   useEffect(() => {
-    let userDetails;
-    if (getUserDetails(customerId)) {
-      userDetails = { ...userDetails, ...getUserDetails(customerId) };
-      setUserDetails(userDetails);
-      if (response) {
-        setRoutes(response.route);
-      }
-      setVerified(userDetails.email_verified);
-    }
+    // let userDetails;
+    // if (getUserDetails(customerId)) {
+    //   userDetails = { ...userDetails, ...getUserDetails(customerId) };
+    //   setUserDetails(userDetails);
+    //   if (response) {
+    //     setRoutes(response.route);
+    //   }
+    //   setVerified(userDetails.email_verified);
+    // }
 
-    (async () => {
-      try {
-        const {
-          data: { data: customer },
-        } = await getBusinessProfile(
-          user.details ? user.details.customerId : userDetails.customerId ? userDetails.customerId : customerId,
-          userDetails.token,
-        );
-        setBusinessProfile({
-          businessName: customer.customer.business_name,
-          customerId: customer.customer.id,
-          customerImg: customer.customer.image,
-          partnerId: customer.customer.partner_id,
-          admin: customer.customer.admin,
-        });
-      } catch (error) {
-        // console.log({ error });
-      }
-    })();
+    // (async () => {
+    //   try {
+    //     const {
+    //       data: { data: customer },
+    //     } = await getBusinessProfile(
+    //       user.details ? user.details.customerId : userDetails.customerId ? userDetails.customerId : customerId,
+    //       userDetails.token,
+    //     );
+    //     setBusinessProfile({
+    //       businessName: customer.customer.business_name,
+    //       customerId: customer.customer.id,
+    //       customerImg: customer.customer.image,
+    //       partnerId: customer.customer.partner_id,
+    //       admin: customer.customer.admin,
+    //     });
+    //   } catch (error) {
+    //     // console.log({ error });
+    //   }
+    // })();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [customerId, setUserDetails, response]);
 
-  async function sendVerification() {
-    const details = {
-      mobile: userDetails.mobile,
-      user_type: userDetails.userType,
-      tag: 'email',
-      email: userDetails.email,
+  // async function sendVerification() {
+  //   const details = {
+  //     mobile: userDetails.mobile,
+  //     user_type: userDetails.userType,
+  //     tag: 'email',
+  //     email: userDetails.email,
 
-      token: userDetails.token,
-    };
+  //     token: userDetails.token,
+  //   };
 
-    setShow(!show);
+  //   setShow(!show);
 
-    try {
-      const res = await baseurl.post('user/otp/init', details);
-      if (res) {
-        setShow(!show);
-        toast.success('A verification link has been sent to your email.');
-      }
-    } catch ({ response }) {
-      setShow(!show);
-      if (response) {
-        const { message } = response.data;
-        toast.error(message);
-      }
-    }
-  }
+  //   try {
+  //     const res = await baseurl.post('user/otp/init', details);
+  //     if (res) {
+  //       setShow(!show);
+  //       toast.success('A verification link has been sent to your email.');
+  //     }
+  //   } catch ({ response }) {
+  //     setShow(!show);
+  //     if (response) {
+  //       const { message } = response.data;
+  //       toast.error(message);
+  //     }
+  //   }
+  // }
 
-  async function resendVerification() {
-    const details = {
-      mobile: userDetails.mobile,
-      user_type: userDetails.userType,
-      tag: 'email',
-      email: userDetails.email,
+  // async function resendVerification() {
+  //   const details = {
+  //     mobile: userDetails.mobile,
+  //     user_type: userDetails.userType,
+  //     tag: 'email',
+  //     email: userDetails.email,
 
-      token: userDetails.token,
-    };
+  //     token: userDetails.token,
+  //   };
 
-    try {
-      const res = await baseurl.post('user/otp/init', details);
-      if (res) {
-        toast.success('A verification mail has been re-sent to your email.');
-      }
-    } catch ({ response }) {
-      if (response) {
-        const { message } = response.data;
-        toast.error(message);
-      }
-    }
-  }
+  //   try {
+  //     const res = await baseurl.post('user/otp/init', details);
+  //     if (res) {
+  //       toast.success('A verification mail has been re-sent to your email.');
+  //     }
+  //   } catch ({ response }) {
+  //     if (response) {
+  //       const { message } = response.data;
+  //       toast.error(message);
+  //     }
+  //   }
+  // }
 
-  setInterval(() => {
-    setIndex(0);
-  }, 300000);
+  // setInterval(() => {
+  //   setIndex(0);
+  // }, 300000);
 
-  if (!userDetails || !businessProfile) {
-    return <MainAppLoader />;
-  }
+  // // if (!userDetails || !businessProfile) {
+  // //   return <MainAppLoader />;
+  // // }
 
-  const options = {
-    debug: process.env.NODE_ENV === 'development' ? true : false,
-    titleCase: false,
-    gaOptions: {
-      name: businessProfile.businessName,
-      // userId: userDetails.accountId,
-    },
-  };
-  initGA('UA-122568450-1', options);
-  setInterceptor(insuranceUrl, customerId);
-  PageView();
-  setProperties({ userId: userDetails.accountId, name: businessProfile.businessName });
+  // const options = {
+  //   debug: process.env.NODE_ENV === 'development' ? true : false,
+  //   titleCase: false,
+  //   gaOptions: {
+  //     name: businessProfile.businessName,
+  //     // userId: userDetails.accountId,
+  //   },
+  // };
+  // initGA('UA-122568450-1', options);
+  // setInterceptor(insuranceUrl, customerId);
+  // PageView();
+  // // setProperties({ userId: userDetails.accountId, name: businessProfile.businessName });
 
   return (
-    <div id='mainApp' dir={localStorage.i18nextLng === 'ar' ? 'rtl' : 'auto'}>
-      <MainAppStyle dir={localStorage.i18nextLng === 'ar' ? 'rtl' : 'auto'}>
-        <GlobalSideNav {...{ businessName: businessProfile.businessName, customerId: businessProfile.customerId }} />
+      <div >
+        <MainAppStyle dir={localStorage.i18nextLng === 'ar' ? 'rtl' : 'auto'}>
+         {/* <GlobalSideNav {...{ businessName: businessProfile.businessName, customerId: businessProfile.customerId }} /> */}
         <ErrorBoundary>
           <GlobalNavProvider>
             <GlobalContent
               {...{
                 businessProfile,
-                isUserVerified: verified,
+                isUserVerified: true,
                 show,
-                fxParams: { sendVerification, resendVerification },
+                fxParams: {  },
               }}
             />
             <div className='tickerWrap'>

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
-import EmptyTruck from '../assets/images/empty-truck.png';
+// import EmptyTruck from '../assets/images/empty-truck.png';
 
 const StyledNotFound = styled.div`
   height: 100vh;
@@ -49,9 +49,9 @@ function NotFound() {
     <StyledNotFound>
       <h1 className='notFound'>{t('common.notFound')}</h1>
       <h1 className='title'>404</h1>
-      <div className='image'>
+      {/* <div className='image'>
         <img src={EmptyTruck} alt='404' />
-      </div>
+      </div> */}
       <div onClick={() => window.open(`//${process.env.REACT_APP_DOMAIN}/register`, '_self')} className='login'>
         <>{t('common.register')}</>
       </div>

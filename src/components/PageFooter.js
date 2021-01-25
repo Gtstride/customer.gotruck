@@ -41,7 +41,7 @@ function PageFooter() {
 
       <div className='copyBlock' style={{ display: 'flex', alignItems: 'center' }}>
         <p>
-          &copy; <>{t('pageFooter.copyright')}</> Kobo360, {new Date().getFullYear()}
+          &copy; <>{t('pageFooter.copyright')}</> Gotruck, {new Date().getFullYear()}
         </p>
 
         <div className='languageSwitcherBlock'>

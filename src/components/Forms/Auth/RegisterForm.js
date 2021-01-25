@@ -2,27 +2,28 @@ import { ErrorMessage, Field, Form, withFormik } from 'formik';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
-import { registerUser } from '../../../APIs/Create';
-import { ArrowSVGIcon, TogglePasswordVisibilitySVGIcon, WarningSVGIcon } from '../../../assets/icons/Icons';
+// import { registerUser } from '../../../APIs/Create';
+import { TogglePasswordVisibilitySVGIcon, WarningSVGIcon, ArrowSVGIcon } from '../../../assets/icons/Icons';
 import NigeriaFlag from '../../../assets/icons/naija.png';
-import FormStyle from '../../../styles/FormStyle';
-import { authUserAsIs, getCustomerIdFromToken } from '../../../_utils/auth';
-import { toastEnums } from '../../../_utils/constants';
-import { baseurl, capitalizeFirstLetter, uuid, phoneFormatter } from '../../../_utils/fx';
-import ButtonLoader from '../../Loaders/ButtonLoader';
-import CardFrequencyLoader from '../../Loaders/CardFrequencyLoader';
+import FormStyle from "./FormStyle";
+// import { authUserAsIs, getCustomerIdFromToken } from '../../../_utils/auth';
+// import { toastEnums } from '../../../_utils/constants';
+import { baseurl, capitalizeFirstLetter, uuid, phoneFormatter } from "../../../_utils/fx";
+import ButtonLoader from '../Auth/ButtonLoader';
+import CardFrequencyLoader from "../../Loaders/CardFrequencyLoader";
 
 function BusinessCountryList({ setBusinessCountry, selectedCountry, countries }) {
   return countries.map(({ country, flag, phoneCode }) => {
     return (
       <div
-        className='popupItemWrap'
-        key={uuid()}
+        // className='popupItemWrap'
+        // key={uuid()
+        // }
         data-iscountryselected={country === selectedCountry}
         onClick={() => setBusinessCountry({ country, flag, phoneCode })}
       >
         <img src={flag} alt={`${country} flag`} className='popupIcon' />
-        <p className='countryName'>{capitalizeFirstLetter(country)}</p>
+        {/* <p className='countryName'>{capitalizeFirstLetter(country)}</p> */}
         <p className='countryDialingCode'>{phoneCode}</p>
       </div>
     );
@@ -201,7 +202,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
                     <div className='optionIcon'>
                       <img src={selectedCountry.flag} alt='Nigeria flag' />
                     </div>
-                    <p className='optionValue'>{capitalizeFirstLetter(selectedCountry.country)}</p>
+                    {/* <p className='optionValue'>{capitalizeFirstLetter(selectedCountry.country)}</p> */}
                     <div className='optionIndicator'>
                       <ArrowSVGIcon />
                     </div>
@@ -211,7 +212,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
                       <BusinessCountryList
                         countries={countries}
                         setBusinessCountry={setBusinessCountry}
-                        selectedCountry={capitalizeFirstLetter(selectedCountry.country)}
+                        // selectedCountry={capitalizeFirstLetter(selectedCountry.country)}
                       />
                     </div>
                   )}
@@ -332,39 +333,39 @@ export default withFormik({
         last_name: values.lastName,
         email: values.email,
         secret: values.password,
-        country: capitalizeFirstLetter(values.businessCountry),
+        // country: capitalizeFirstLetter(values.businessCountry),
         location: values.location,
         business_name: values.companyName,
-        mobile: phoneFormatter(values.contactPhone.toString(), values.dialingCode),
+        // mobile: phoneFormatter(values.contactPhone.toString(), values.dialingCode),
         user_type: 'customer',
       };
 
-      const res = await registerUser(registrationCredentials);
+      // const res = await registerUser(registrationCredentials);
 
-      if (res) {
-        // 1. Get user token
-        let token = res.data.data.token;
+      // if (res) {
+      //   // 1. Get user token
+      //   // let token = res.data.data.token;
 
-        // 2. Authenticate user into MainApp
-        authUserAsIs(res.data);
+      //   // 2. Authenticate user into MainApp
+      //   // authUserAsIs(res.data);
 
-        // 6. Route to the dashboard
-        props.push(`/${getCustomerIdFromToken(token)}/dashboard`);
-      }
+      //   // 6. Route to the dashboard
+      //   // props.push(`/${getCustomerIdFromToken(token)}/dashboard`);
+      // }
       resetForm();
     } catch ({ response }) {
       if (response) {
         // const { status: statusCode } = response;
         const { message: errorMessage } = response.data;
         props.setToast({
-          showToast: true,
-          toastType: toastEnums.FAILURE,
-          toastMessage: errorMessage,
+          // showToast: true,
+          // toastType: toastEnums.FAILURE,
+          // toastMessage: errorMessage,
         });
       } else {
         props.setToast({
           showToast: true,
-          toastType: toastEnums.FAILURE,
+          // toastType: toastEnums.FAILURE,
           toastMessage: 'Something went wrong; Try again',
         });
       }

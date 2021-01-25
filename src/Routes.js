@@ -1,59 +1,87 @@
-import React, { Suspense } from 'react';
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import ContentLoader from './components/Loaders/ContentLoader';
-import { BusinessUnitsProvider } from './contexts/BusinessUnitsContext';
-import { UserProvider } from './contexts/UserContext';
-import MainApp from './MainApp';
-import AuthorizePage from './pages/Auth/AuthorizePage';
-import ConfirmPage from './pages/Auth/ConfirmPage';
-import ForgotPasswordPage from './pages/Auth/ForgotPasswordPage';
-import LoginPage from './pages/Auth/LoginPage';
-import RegisterPage from './pages/Auth/RegisterPage';
-import ResetPasswordPage from './pages/Auth/ResetPasswordPage';
-import VerifyForgotPasswordCodePage from './pages/Auth/VerifyForgotPasswordCodePage';
-function Routes() {
-  return (
-    <Switch>
-      <Suspense fallback={<ContentLoader />}>
-        <Route path='/' exact>
-          <LoginPage />
-        </Route>
-        <Route path='/login'>
-          <Redirect to='/' />
-        </Route>
-        <Route path='/register'>
-          <RegisterPage />
-        </Route>
-        <Route path='/forgot-password'>
-          <ForgotPasswordPage />
-        </Route>
-        <Route path='/verify-forgot-password-otp'>
-          <VerifyForgotPasswordCodePage />
-        </Route>
-        <Route path='/reset-password'>
-          <ResetPasswordPage />
-        </Route>
-        <Route path='/authorize'>
-          <AuthorizePage />
-        </Route>
-        <Route path='/confirm'>
-          <ConfirmPage />
-        </Route>
-        <UserProvider>
-          <BusinessUnitsProvider>
-            <Route path='/:customerId/:page'>
-              <MainApp />
-            </Route>
-          </BusinessUnitsProvider>
-        </UserProvider>
-      </Suspense>
-      <Route>
-        <h1>Not Found.</h1>
-      </Route>
-    </Switch>
-  );
-}
+// @material-ui/icons
+import Dashboard from "@material-ui/icons/Dashboard";
+import Person from "@material-ui/icons/Person";
+import LibraryBooks from "@material-ui/icons/LibraryBooks";
+import BubbleChart from "@material-ui/icons/BubbleChart";
+import LocationOn from "@material-ui/icons/LocationOn";
+import Notifications from "@material-ui/icons/Notifications";
+import Unarchive from "@material-ui/icons/Unarchive";
 
-export default Routes;
+import RegisterPage from "../src/layouts/RegisterPage";
+
+// core components/views for Admin layout
+import DashboardPage from "./views/Dashboard/Dashboard.js";
+import UserProfile from "./views/UserProfile/UserProfile.js";
+import TableList from "./views/TableList/TableList.js";
+import Typography from "./views/Typography/Typography.js";
+import Icons from "./views/Icons/Icons.js";
+import Maps from "./views/Maps/Maps.js";
+import NotificationsPage from "./views/Notifications/Notifications.js";
+import UpgradeToPro from "./views/UpgradeToPro/UpgradeToPro.js";
+
+const dashboardRoutes = [
+  // {
+  //   path: "/register",
+  //   // name: "Register",
+  //   component: RegisterPage,
+  //   layout: "/register",
+  // },
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    icon: Dashboard,
+    component: DashboardPage,
+    layout: "/admin"
+  },
+  {
+    path: "/user",
+    name: "User Profile",
+    icon: Person,
+    component: UserProfile,
+    layout: "/admin"
+  },
+  {
+    path: "/table",
+    name: "PickUp Location",
+    icon: "content_paste",
+    component: TableList,
+    layout: "/admin"
+  },
+  {
+    path: "/typography",
+    name: "Driver's Profile",
+    icon: LibraryBooks,
+    component: Typography,
+    layout: "/admin"
+  },
+  {
+    path: "/icons",
+    name: "Icons",
+    icon: BubbleChart,
+    component: Icons,
+    layout: "/admin"
+  },
+  {
+    path: "/maps",
+    name: "Maps",
+    icon: LocationOn,
+    component: Maps,
+    layout: "/admin"
+  },
+  {
+    path: "/notifications",
+    name: "Notifications",
+    icon: Notifications,
+    component: NotificationsPage,
+    layout: "/admin"
+  },
+  {
+    path: "/upgrade-to-pro",
+    name: "Contact Us",
+    icon: Unarchive,
+    component: UpgradeToPro,
+    layout: "/admin"
+  }
+];
+
+export default dashboardRoutes;

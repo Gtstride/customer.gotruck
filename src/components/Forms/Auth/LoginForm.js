@@ -3,15 +3,10 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
-import { logUserIn } from '../../../APIs/Create';
+import ButtonLoader from "./ButtonLoader";
+// import { logUserIn } from '../../../APIs/Create';
 import { TogglePasswordVisibilitySVGIcon, WarningSVGIcon } from '../../../assets/icons/Icons';
-import FormStyle from '../../../styles/FormStyle';
-import { authUserAsIs, getCustomerIdFromToken } from '../../../_utils/auth';
-import ButtonLoader from '../../Loaders/ButtonLoader';
-import Toast from '../../Shared/Toast/Toast';
-import { toastEnums } from '../../../_utils/constants';
-import { environment } from "../../../_utils/environment" 
-import { notAllowedSubDomain } from '../../../_utils/fx';
+import FormStyle from "./FormStyle";
 
 function LoginForm({ push, customerId }) {
   // #region States
@@ -57,37 +52,37 @@ function LoginForm({ push, customerId }) {
       email: Yup.string()
         .email('Invalid email address')
         .required(`${t('forms.required')}`),
-      password: Yup.string().required(`${t('forms.required')}`),
+      password: Yup.string().required(`${('forms.required')}`),
     }),
     async onSubmit(values) {
-      const { multiTenant } = environment(sub);
+      // const { multiTenant } = environment(sub);
       try {
-        let loginCredentials = {
-          email: values.email,
-          secret: values.password,
-          user_type: 'customer',
-        };
-        if (!notAllowedSubDomain().includes(sub)) {
-          if (multiTenant) {
-            loginCredentials = { ...loginCredentials, customerId };
-          }
-        }
-        const res = await logUserIn(loginCredentials);
-        if (res) {
+        // let loginCredentials = {
+        //   email: values.email,
+        //   secret: values.password,
+        //   user_type: 'customer',
+        // };
+        // if (!notAllowedSubDomain().includes(sub)) {
+        //   if (multiTenant) {
+        //     loginCredentials = { ...loginCredentials, customerId };
+        //   }
+        // }
+        // const res = await logUserIn(loginCredentials);
+        // if (res) {
           // 1. Authenticate user into MainApp
-          authUserAsIs(res.data);
+          // authUserAsIs(res.data);
 
           // 2. Get customer id from token
           let customerId;
-          if (!notAllowedSubDomain().includes(sub)) {
-            if (multiTenant) {
-              customerId = 'app';
-            } else {
-              customerId = getCustomerIdFromToken(res.data.data.token);
-            }
-          } else {
-            customerId = getCustomerIdFromToken(res.data.data.token);
-          }
+          // if (!notAllowedSubDomain().includes(sub)) {
+          //   if (multiTenant) {
+          //     customerId = 'app';
+          //   } else {
+          //     customerId = getCustomerIdFromToken(res.data.data.token);
+          //   }
+          // } else {
+          //   customerId = getCustomerIdFromToken(res.data.data.token);
+          // }
           // 3. Reset values
           values = null;
 
@@ -95,21 +90,21 @@ function LoginForm({ push, customerId }) {
           push(`/${customerId}/dashboard`);
 
           resetForm();
-        }
+        // }
       } catch ({ response }) {
         if (response) {
-          const { message: errorMessage } = response.data;
-          setToast({
-            showToast: true,
-            toastType: toastEnums.FAILURE,
-            toastMessage: errorMessage,
-          });
+          // const { message: errorMessage } = response.data;
+          // setToast({
+          //   showToast: true,
+          //   toastType: toastEnums.FAILURE,
+          //   toastMessage: errorMessage,
+          // });
         } else {
-          setToast({
-            showToast: true,
-            toastType: toastEnums.FAILURE,
-            toastMessage: 'Something went wrong. Try again.',
-          });
+          // setToast({
+          //   showToast: true,
+          //   toastType: toastEnums.FAILURE,
+          //   toastMessage: 'Something went wrong. Try again.',
+          // });
         }
       }
       setSubmitting(false);
@@ -123,7 +118,7 @@ function LoginForm({ push, customerId }) {
         <form id='loginForm' noValidate onSubmit={handleSubmit}>
           <div className='formContentBlock'>
             <header className='formHeader'>
-              <h2 className='formTitle'>{('common.signIn')}</h2>
+              <h2 className='formTitle'>{t('common.signIn')}</h2>
             </header>
             <div className='formContent'>
               <div className='fields'>
@@ -133,7 +128,7 @@ function LoginForm({ push, customerId }) {
                     <div className='errorMessageBlock'>
                       {touched['email'] && errors['email'] && (
                         <>
-                          <WarningSVGIcon />
+                          {/* <WarningSVGIcon /> */}
                           <p className='errorMessage'>{errors['email']}</p>
                         </>
                       )}
@@ -176,26 +171,18 @@ function LoginForm({ push, customerId }) {
                       </span>
                     )}
                   </div>
+                   <div className='forgotPasswordBlock'>
+                  <Link to='/forgot-password'>{('FORGOT - PASSWORD')}</Link>
                 </div>
-                <div className='forgotPasswordBlock'>
-                  <Link to='/forgot-password'>{t('common.forgotPassword')}</Link>
                 </div>
               </div>
             </div>
           </div>
           <div className='cta dp-flex ju-cont-ce'>
-            <Link to="/customer/dashboard" className='dp-flex' disabled={!(isValid && dirty) || isSubmitting}>
-              {(isSubmitting && <ButtonLoader />) || <>{t('common.signIn')}</>}
-            </Link>
-            {/* <button type='submit' className='dp-flex' disabled={!(isValid && dirty) || isSubmitting}>
-              {(isSubmitting && <ButtonLoader />) || <>{t('common.signIn')}</>}
-            </button> */}
+             <Link to='/admin/dashboard'>{('SIGN-IN')}</Link>
           </div>
         </form>
       </FormStyle>
-      <Toast
-        {...{ showToast: toast.showToast, toastType: toast.toastType, toastMessage: toast.toastMessage, setToast }}
-      />
     </>
   );
 }

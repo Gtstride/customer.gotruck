@@ -1,6 +1,0 @@
-//Convert all pixels to rem equivalent
-$body-font-size: 16;
-
-@function rem-calc($value) {
-  @return #{$value/$body-font-size}rem;
-}

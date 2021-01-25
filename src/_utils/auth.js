@@ -3,7 +3,7 @@ import jwt_decode from 'jwt-decode';
 import { setItemInLocalStorage } from './browser';
 import { baseurl, notAllowedSubDomain } from './fx';
 import { environment } from './environment';
-import { Apptoken } from '../APIs/Read';
+// import { Apptoken } from '../APIs/Read';
 let userDataFromToken = {};
 const sub = window.location.hostname.split('.')[0];
 
@@ -99,7 +99,7 @@ const getUserInfo = customerId => {
   const authToken = JSON.parse(localStorage[`user-${customerId}`]).token;
 
   return baseurl.get(`/user/${customerId}`, {
-    headers: { Authorization: `Bearer ${authToken}`, Apptoken },
+    // headers: { Authorization: `Bearer ${authToken}`, Apptoken },
   });
 };
 

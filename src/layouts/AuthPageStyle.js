@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const AuthPageStyle = styled.div`
-  min-height: 100vh;
-  height: 100vh;
+  background-color: #3fc3ee;
+  // min-height: 100vh;
+  height: 98vh;
   width: 100%;
 
   > [id*='Page'] {
@@ -14,7 +15,13 @@ const AuthPageStyle = styled.div`
 
   .formContentBlock {
     padding: 30px 42px;
+    background-color: #9de0f6;
   }
+
+//   img.reg-img {
+//     margin-left: 700px;
+//     margin-bottom: -26px;
+// }
 
   .pageTitle {
     text-align: center;
@@ -24,6 +31,7 @@ const AuthPageStyle = styled.div`
     font-family: 'Avenir-bold';
     display: block;
     font-size: 20px;
+    text-decoration: none;
   }
 
   .alternateAuth {
@@ -33,6 +41,7 @@ const AuthPageStyle = styled.div`
       font-size: 14px;
       color: var(--blue);
       font-weight: 200;
+      text-decoration: none;
     }
   }
 

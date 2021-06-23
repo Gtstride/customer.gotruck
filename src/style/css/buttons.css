@@ -1,0 +1,42 @@
+button {
+  cursor: pointer;
+  transition: ease-out 0.3s;
+  padding: 0px 16px;
+  background-color: transparent;
+}
+
+button:disabled {
+  cursor: initial !important;
+}
+
+button.plainBg:hover {
+  background: #f9f6f6 !important;
+}
+
+button::first-letter {
+  text-transform: uppercase;
+}
+
+button.createAction {
+  min-width: 155px;
+  height: 35px;
+  background-color: #36b37e;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 19px;
+  color: var(--white);
+  font-size: 16px;
+  padding: 0px 18px;
+}
+.pointer {
+  cursor: pointer;
+}
+
+button.cancelAction {
+  background-color: #f00;
+  padding: 0px 18px;
+  color: var(--white);
+  font-size: 16px;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 19px;
+  height: 38px;
+}

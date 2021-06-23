@@ -11,7 +11,7 @@ export const PageView = () => {
 
 export const setProperties = ({ userId, name }) => {
   ReactGA.set({
-    appName: 'Customer Dashboard',
+    appName: 'Admin Dashboard',
     hostname: window.location.hostname,
     location: window.location.href,
     language: localStorage.i18nextLng,

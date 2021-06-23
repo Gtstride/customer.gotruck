@@ -1,12 +1,7 @@
 import React from "react";
-
-// @material-ui/core
 import { makeStyles } from "@material-ui/core/styles";
 
-// @material-ui/icons
 import AccessTime from "@material-ui/icons/AccessTime";
-
-// core components
 import GridItem from "../../components/Grid/GridItem.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import Card from "../../components/Card/Card.js";

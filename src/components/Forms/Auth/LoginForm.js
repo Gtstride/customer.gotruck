@@ -118,13 +118,13 @@ function LoginForm({ push, customerId }) {
         <form id='loginForm' noValidate onSubmit={handleSubmit}>
           <div className='formContentBlock'>
             <header className='formHeader'>
-              <h2 className='formTitle'>{t('common.signIn')}</h2>
+              <h2 className='formTitle'>{t('SIGN IN')}</h2>
             </header>
             <div className='formContent'>
               <div className='fields'>
                 <div className='email formFieldBlock'>
                   <header className='formFieldHeader'>
-                    <label htmlFor='email'>{t('forms.email')}</label>
+                    <label htmlFor='email'>{t('EMAIL')}</label>
                     <div className='errorMessageBlock'>
                       {touched['email'] && errors['email'] && (
                         <>
@@ -146,7 +146,7 @@ function LoginForm({ push, customerId }) {
                 </div>
                 <div className='password formFieldBlock'>
                   <header className='formFieldHeader'>
-                    <label htmlFor='password'>{t('forms.password')}</label>
+                    <label htmlFor='password'>{t('PASSWORD')}</label>
                     <div className='errorMessageBlock'>
                       {touched['password'] && errors['password'] && (
                         <>
@@ -172,7 +172,7 @@ function LoginForm({ push, customerId }) {
                     )}
                   </div>
                    <div className='forgotPasswordBlock'>
-                  <Link to='/forgot-password'>{('FORGOT - PASSWORD')}</Link>
+                  {/* <Link to='/forgot-password'>{('FORGOT - PASSWORD')}</Link>ya */}
                 </div>
                 </div>
               </div>

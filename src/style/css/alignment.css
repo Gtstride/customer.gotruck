@@ -1,0 +1,183 @@
+[data-align='center-both'] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+[data-align='align-both-div'] {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  /* justify-content: space-around; */
+  grid-gap: 1rem;
+}
+
+.al-item-ce,
+.align-items-center {
+  align-items: center;
+}
+
+.ju-cont-ce {
+  justify-content: center;
+}
+
+.flex-js-ct-sp-bet {
+  justify-content: space-between;
+}
+
+.vt-al-md {
+  vertical-align: middle;
+}
+
+.txt-align--right {
+  text-align: right;
+}
+
+.txt-align--left {
+  text-align: left;
+}
+
+/* WAYBILL THINGY */
+.wayBillBox {
+  /* width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  margin: auto;
+  margin-top: 20em;
+  margin-bottom: 20px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; */
+
+  width: calc(100% - 200px);
+    height: calc(100% - 150px);
+    margin: 20px auto;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    overflow: hidden; 
+}
+.wayBillBox img,
+.object-fit {
+  object-fit: contain;
+}
+.wayBillBox img {
+  transition: all 0.3s;
+  max-height: 100%;
+}
+.wayBillBox img:hover {
+  /* transform: scale(2.4); */
+}
+.wayBillNote {
+  width: calc(100% - 200px);
+  height: 20px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.waybillNote .trip-detail {
+  display: inline-block;
+  width: auto;
+  color: white;
+}
+.wayBillNav {
+  min-width: 200px;
+  height: 50px;
+  margin: auto;
+  width: auto;
+  display: inline-block;
+}
+.wayBillNav .navs {
+  width: 50px;
+  height: 50px;
+  float: left;
+  position: relative;
+}
+.wayBillNav .navs.left {
+  margin-right: 25px;
+}
+.wayBillNav .navs.right {
+  margin-left: 25px;
+}
+.wayBillNav .count {
+  width: 100px;
+  height: 50px;
+  background: #fff;
+  color: var(--black) !important;
+  border-radius: 50px;
+  float: left;
+}
+.wayBillNav .navs i {
+  color: #fff;
+}
+.waybill.showWaybill {
+  top: 0px;
+}
+
+.waybill {
+  width: 100%;
+  height: calc(100% - 0px);
+  background: rgba(0,0,0,.8);
+  position: fixed;
+  z-index: 999999;
+  top: 100%;
+  left: 0;
+  transition: all .2s;
+}
+
+.count {
+  margin-left: 10px;
+  margin-top: -3px;
+}
+
+.count_bg {
+  font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .6em;
+}
+
+
+.pointer {
+  cursor: pointer;
+}
+
+.waybill-container {
+   display: inline-block;
+  /*flex-direction: column;
+  justify-content: center; */
+  margin-top: 0em;
+}
+
+.nav-arrows {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  top: 45%;
+}
+
+.nav-button.left {
+  left: 20px;
+}
+
+.nav-button.right {
+  right: 20px;
+}
+
+.center_item_vertically {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+}
+
+.nav-button i {
+  font-size: 2.5rem;
+  color: #fff;
+  opacity: .5;
+  transition: all .5s;
+}

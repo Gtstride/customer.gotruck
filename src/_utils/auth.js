@@ -1,7 +1,10 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import { setItemInLocalStorage } from './browser';
-import { baseurl, notAllowedSubDomain } from './fx';
+import {
+  baseurl,
+  notAllowedSubDomain
+} from './fx';
 import { environment } from './environment';
 // import { Apptoken } from '../APIs/Read';
 let userDataFromToken = {};

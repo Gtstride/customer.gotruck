@@ -28,6 +28,8 @@ const baseurl = axios.create({
   baseURL: `${process.env.REACT_APP_ENDPOINT}`,
 });
 
+const baseUrl = "https://gotrucker.herokuapp.com/"
+
 const insuranceUrl = axios.create({
   baseURL: `${process.env.REACT_APP_INSURANCE_URL}`,
 });

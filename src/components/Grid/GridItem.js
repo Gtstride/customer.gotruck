@@ -13,7 +13,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function GridItem(props) {
+const GridItem = (props) => {
   const classes = useStyles();
   const { children, ...rest } = props;
   return (
@@ -26,3 +26,5 @@ export default function GridItem(props) {
 GridItem.propTypes = {
   children: PropTypes.node
 };
+
+export default GridItem;

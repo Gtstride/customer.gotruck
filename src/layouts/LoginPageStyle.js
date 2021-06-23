@@ -11,6 +11,12 @@ const LoginPageStyle = styled.div`
     margin: 0 auto;
   }
 
+   div img {
+    max-width: 100%;
+    height: auto;
+    // border-radius: 7rem;
+  }
+
   .logoBlock {
     width: 200px;
     height: 100px;

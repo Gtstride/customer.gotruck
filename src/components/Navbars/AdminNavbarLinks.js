@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
@@ -75,7 +76,7 @@ export default function AdminNavbarLinks() {
       >
         <Dashboard className={classes.icons} />
         <Hidden mdUp implementation="css">
-          <p className={classes.linkText}>Dashboard</p>
+          <p className={classes.linkText}>Customer's Dashboard</p>
         </Hidden>
       </Button>
       <div className={classes.manager}>
@@ -211,7 +212,9 @@ export default function AdminNavbarLinks() {
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
+                      <Link to="/">
                       Logout
+                      </Link>
                     </MenuItem>
                   </MenuList>
                 </ClickAwayListener>

@@ -2,12 +2,12 @@ import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
-import { forgotPassword } from '../../../APIs/Create';
+// import { forgotPassword } from '../../../APIs/Create';
 import { WarningSVGIcon } from '../../../assets/icons/Icons';
-import FormStyle from '../../../styles/FormStyle';
+import FormStyle from './FormStyle';
 import { toastEnums } from '../../../_utils/constants';
-import ButtonLoader from '../../Loaders/ButtonLoader';
-import Toast from '../../Shared/Toast/Toast';
+// import ButtonLoader from '../../Loaders/ButtonLoader';
+// import Toast from '../../Shared/Toast/Toast';
 
 function ForgotPasswordForm({ push }) {
   const { t } = useTranslation();
@@ -32,19 +32,19 @@ function ForgotPasswordForm({ push }) {
           email: values.email,
         };
 
-        const res = await forgotPassword(params);
-        if (res) {
-          localStorage.setItem(
-            'customerForgotPasswordCredentials',
-            JSON.stringify({
-              ...params,
-              reset_code: res.data.data.reset_code,
-              token: res.data.data.token,
-              password: '',
-            }),
-          );
-          push('/verify-forgot-password-otp');
-        }
+        // const res = await forgotPassword(params);
+        // if (res) {
+        //   localStorage.setItem(
+        //     'customerForgotPasswordCredentials',
+        //     JSON.stringify({
+        //       ...params,
+        //       reset_code: res.data.data.reset_code,
+        //       token: res.data.data.token,
+        //       password: '',
+        //     }),
+        //   );
+        //   push('/verify-forgot-password-otp');
+        // }
       } catch ({ response }) {
         if (response) {
           // const { status: statusCode } = response;
@@ -70,13 +70,13 @@ function ForgotPasswordForm({ push }) {
         <form id='loginForm' onSubmit={handleSubmit}>
           <div className='formContentBlock'>
             <header className='formHeader'>
-              <h2 className='formTitle'>{t('forms.resetPassword')}</h2>
+              <h2 className='formTitle'>{('Reset Password')}</h2>
             </header>
             <div className='formContent'>
               <div className='fields'>
                 <div className='email formFieldBlock'>
                   <header className='formFieldHeader'>
-                    <label htmlFor='email'>{t('forms.email')}</label>
+                    <label htmlFor='email'>{('Registered Email')}</label>
                     <div className='errorMessageBlock'>
                       {touched['email'] && errors['email'] && (
                         <>
@@ -101,14 +101,14 @@ function ForgotPasswordForm({ push }) {
           </div>
           <div className='cta dp-flex ju-cont-ce'>
             <button type='submit' className='dp-flex' disabled={!(isValid && dirty) || isSubmitting}>
-              {(isSubmitting && <ButtonLoader />) || `${t('forms.resetPassword')}`}
+              {/* {(isSubmitting && <BucttonLoader />) || `${t('forms.resetPassword')}`} */}
             </button>
           </div>
         </form>
       </FormStyle>
-      <Toast
+      {/* <Toast
         {...{ showToast: toast.showToast, toastType: toast.toastType, toastMessage: toast.toastMessage, setToast }}
-      />
+      /> */}
     </>
   );
 }

@@ -46,7 +46,7 @@ function PageFooter() {
 
         <div className='languageSwitcherBlock'>
           <button className='popupTriggerBtn_ dp-flex al-item-ce' onClick={toggleLanguageSwitcherPopup}>
-            <p className='languageSwitcherLabel'>{lang[localStorage.i18nextLng.split(/[-_]/)[0]]}</p>
+            {/* <p className='languageSwitcherLabel'>{lang[localStorage.i18nextLng.split(/[-_]/)[0]]}</p> */}
             <ArrowSVGIcon />
           </button>
           {isLanguagePopupActive && (

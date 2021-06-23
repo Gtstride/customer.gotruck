@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 // import { registerUser } from '../../../APIs/Create';
+
 import { TogglePasswordVisibilitySVGIcon, WarningSVGIcon, ArrowSVGIcon } from '../../../assets/icons/Icons';
-import NigeriaFlag from '../../../assets/icons/naija.png';
+// import NigeriaFlag from '../../../assets/icons/naija.png';
 import FormStyle from "./FormStyle";
 // import { authUserAsIs, getCustomerIdFromToken } from '../../../_utils/auth';
-// import { toastEnums } from '../../../_utils/constants';
 import { baseurl, capitalizeFirstLetter, uuid, phoneFormatter } from "../../../_utils/fx";
 import ButtonLoader from '../Auth/ButtonLoader';
 import CardFrequencyLoader from "../../Loaders/CardFrequencyLoader";
@@ -23,7 +23,7 @@ function BusinessCountryList({ setBusinessCountry, selectedCountry, countries })
         onClick={() => setBusinessCountry({ country, flag, phoneCode })}
       >
         <img src={flag} alt={`${country} flag`} className='popupIcon' />
-        {/* <p className='countryName'>{capitalizeFirstLetter(country)}</p> */}
+        <p className='countryName'>{capitalizeFirstLetter(country)}</p>
         <p className='countryDialingCode'>{phoneCode}</p>
       </div>
     );
@@ -35,7 +35,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
   const [isPopupActive, setIsPopupActive] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState({
     country: 'Nigeria',
-    flag: NigeriaFlag,
+    // flag: NigeriaFlag,
     dialingCode: '+234',
   });
   const [dialingCode, setDialingCode] = useState('+234');
@@ -59,7 +59,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
             setCountries(res.data.data.countries);
           }
         }
-      } catch (error) {}
+      } catch (error) { }
     })();
   }, [countries.length]);
 
@@ -89,7 +89,6 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
       businessCountry: selectedCountry.country,
       dialingCode: selectedCountry.phoneCode,
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCountry]);
   // #endregion
 
@@ -99,7 +98,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
       <Form id='registerForm' noValidate className='mg-hz-30'>
         <div className='formContentBlock'>
           <header className='formHeader'>
-            <h2 className='formTitle'>{t('common.register')}</h2>
+            <h2 className='formTitle'>{('Register')}</h2>
           </header>
           <div className='formContent'>
             <div className='fields'>
@@ -107,7 +106,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
               <div className='dp-grid col-gap-10 formFieldSplit'>
                 <div className='firstName formFieldBlock'>
                   <header className='formFieldHeader'>
-                    <label htmlFor='firstName'>{t('forms.firstName')}</label>
+                    <label htmlFor='firstName'>{('First Name')}</label>
                     <div className='errorMessageBlock'>
                       <ErrorMessage name='firstName'>
                         {errMsg => (
@@ -125,7 +124,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
                 </div>
                 <div className='lastName formFieldBlock'>
                   <header className='formFieldHeader'>
-                    <label htmlFor='lastName'>{t('forms.lastName')}</label>
+                    <label htmlFor='lastName'>{('Last Name')}</label>
                     <div className='errorMessageBlock'>
                       <ErrorMessage name='lastName'>
                         {errMsg => (
@@ -145,7 +144,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
               {/* Email */}
               <div className='email formFieldBlock'>
                 <header className='formFieldHeader'>
-                  <label htmlFor='email'>{t('forms.email')}</label>
+                  <label htmlFor='email'>{('Email')}</label>
                   <div className='errorMessageBlock'>
                     <ErrorMessage name='email'>
                       {errMsg => (
@@ -170,7 +169,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
               {/* Password */}
               <div className='password formFieldBlock'>
                 <header className='formFieldHeader'>
-                  <label htmlFor='password'>{t('forms.password')}</label>
+                  <label htmlFor='password'>{('Password')}</label>
                   <div className='errorMessageBlock'>
                     <ErrorMessage name='password'>
                       {errMsg => (
@@ -182,43 +181,43 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
                     </ErrorMessage>
                   </div>
                 </header>
-                <div className='formFieldWrap' data-isinvalid={touched['password'] && errors['password']}>
+                {/* <div className='formFieldWrap' data-isinvalid={touched['password'] && errors['password']}>
                   <Field className='password formField' type={passwordFieldType} name='password' autoComplete='off' />
                   {values['password'] && values['password'].length > 0 && (
                     <span className='formFieldIconWrap' onClick={togglePasswordVisibility}>
                       <TogglePasswordVisibilitySVGIcon />
                     </span>
                   )}
-                </div>
+                </div> */}
               </div>
               {/* Business country and location */}
               <div className='dp-grid col-gap-10 formFieldSplit'>
                 <div className='businessCountry formFieldBlock'>
-                  <header className='formFieldHeader' onClick={showPopup}>
+                  {/* <header className='formFieldHeader' onClick={showPopup}>
                     <label htmlFor='businessCountry'>{t('inputText.bizCountry')}</label>
                     {loading && <CardFrequencyLoader />}
-                  </header>
-                  <div className='formFieldWrap optionSwitcher' onClick={showPopup} role='button'>
+                  </header> */}
+                  {/* <div className='formFieldWrap optionSwitcher' onClick={showPopup} role='button'>
                     <div className='optionIcon'>
                       <img src={selectedCountry.flag} alt='Nigeria flag' />
                     </div>
-                    {/* <p className='optionValue'>{capitalizeFirstLetter(selectedCountry.country)}</p> */}
+                    <p className='optionValue'>{capitalizeFirstLetter(selectedCountry.country)}</p>
                     <div className='optionIndicator'>
                       <ArrowSVGIcon />
                     </div>
-                  </div>
-                  {isPopupActive && (
+                  </div> */}
+                  {/* {isPopupActive && (
                     <div className='popup'>
                       <BusinessCountryList
                         countries={countries}
-                        setBusinessCountry={setBusinessCountry}
-                        // selectedCountry={capitalizeFirstLetter(selectedCountry.country)}
+                        // setBusinessCountry={setBusinessCountry}
+                        selectedCountry={capitalizeFirstLetter(selectedCountry.country)}
                       />
                     </div>
-                  )}
+                  )} */}
                 </div>
                 <div className='location formFieldBlock'>
-                  <header className='formFieldHeader'>
+                  {/* <header className='formFieldHeader'>
                     <label htmlFor='location'>{t('inputText.location')}</label>
                     <div className='errorMessageBlock'>
                       <ErrorMessage name='location'>
@@ -230,7 +229,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
                         )}
                       </ErrorMessage>
                     </div>
-                  </header>
+                  </header> */}
                   <div className='formFieldWrap' data-isinvalid={touched['location'] && errors['location']}>
                     <Field className='location' type='text' name='location' autoComplete='off' />
                   </div>
@@ -239,7 +238,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
               {/* Company name*/}
               <div className='companyName formFieldBlock'>
                 <header className='formFieldHeader'>
-                  <label htmlFor='companyName'>{t('inputText.companyName')}</label>
+                  <label htmlFor='companyName'>{t('Company Name')}</label>
                   <div className='errorMessageBlock'>
                     <ErrorMessage name='companyName'>
                       {errMsg => (
@@ -258,7 +257,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
               {/* Contact phone   */}
               <div className='contactPhone formFieldBlock forInputTypeNumber'>
                 <header className='formFieldHeader'>
-                  <label htmlFor='contactPhone'>{t('inputText.contactPhone')}</label>
+                  <label htmlFor='contactPhone'>{t('Contact Phone')}</label>
                   <div className='errorMessageBlock'>
                     <ErrorMessage name='contactPhone'>
                       {errMsg => (
@@ -290,7 +289,7 @@ function RegisterForm({ isSubmitting, isValid, errors, touched, values, setValue
         </div>
         <div className='cta dp-flex ju-cont-ce'>
           <button type='submit' className='dp-flex' disabled={!(isValid && dirty) || isSubmitting}>
-            {(isSubmitting && <ButtonLoader />) || <>{t('common.register')}</>}
+            {(isSubmitting && <ButtonLoader />) || <>{('Register')}</>}
           </button>
         </div>
       </Form>
@@ -320,7 +319,7 @@ export default withFormik({
       lastName: '',
       email: '',
       password: '',
-      location: '',
+      // location: '',
       companyName: '',
       contactPhone: '',
     };
@@ -333,11 +332,11 @@ export default withFormik({
         last_name: values.lastName,
         email: values.email,
         secret: values.password,
-        // country: capitalizeFirstLetter(values.businessCountry),
-        location: values.location,
+        country: capitalizeFirstLetter(values.businessCountry),
+        // location: values.location,
         business_name: values.companyName,
         // mobile: phoneFormatter(values.contactPhone.toString(), values.dialingCode),
-        user_type: 'customer',
+        user_type: 'admin',
       };
 
       // const res = await registerUser(registrationCredentials);
@@ -373,3 +372,4 @@ export default withFormik({
     setSubmitting(false);
   },
 })(RegisterForm);
+

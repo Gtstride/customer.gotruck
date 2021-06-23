@@ -1,0 +1,26 @@
+[data-display='flex'],
+.dp-flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-dir-row {
+  flex-direction: row;
+}
+
+.flex-dir-col {
+  flex-direction: column;
+}
+
+.ord-mn-1 {
+  order: -1;
+}
+.waybill-image {
+  border-radius: 3px;
+  width: 24px;
+  height: 24px;
+  margin: 0 6px;
+}

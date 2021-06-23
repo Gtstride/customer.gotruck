@@ -1,0 +1,246 @@
+@page {
+  margin: 0;
+  size: letter;
+  font-family: Avenir !important;
+  /* or width x height 150mm 50mm */
+}
+
+@font-face {
+  font-family: Avenir-bold;
+  font-weight: bold;
+  src: url(../../assets/fonts/Avenir-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../assets/fonts/Avenir-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Avenir-black;
+  src: url(../../assets/fonts/Avenir-Black.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Avenir-black-slant;
+  src: url(../../assets/fonts/Avenir-BlackOblique.ttf) format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: Avenir-bold-slant;
+  src: url(../assets/fonts/Avenir-MediumOblique.ttf) format('truetype');
+  font-style: italic;
+}
+@font-face {
+  font-family: Avenir-slant;
+  src: url(../assets/fonts/Avenir-LightOblique.ttf) format('truetype');
+  font-style: italic;
+}
+
+.k-pdf-export {
+  font: inherit !important;
+}
+
+body,
+p,
+h1 {
+  box-sizing: border-box;
+}
+.title h1 {
+  font-size: 1.3rem;
+  font-family: var(--font-bold) !important;
+  text-align: center;
+}
+/* helpers */
+.icon-width {
+  width: 10px;
+}
+.main-width {
+  width: calc(100% - 20px);
+}
+.caption-font {
+  font-size: 0.6rem;
+}
+
+.italics {
+  font-style: italic;
+}
+.grey {
+  color: #595959 !important;
+}
+.w100 {
+  width: 100px;
+}
+.mgl-1 {
+  margin-left: 1rem;
+}
+.mgt-small {
+  margin-top: 10px;
+}
+.mgt-big {
+  margin-top: 30px;
+}
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center {
+  text-align: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.mgr-small {
+  margin-right: 5px;
+}
+.mgr-medium {
+  margin-right: 10px;
+}
+.fnt-8 {
+  font-size: 0.8rem;
+}
+.fnt-5 {
+  font-size: 0.5rem;
+}
+.fnt-6 {
+  font-size: 0.6rem;
+}
+.font-slant {
+  font-family: 'Avenir-slant';
+}
+.mgr-big {
+  margin-right: 30px;
+}
+.mgb-small {
+  margin-bottom: 5px;
+}
+.bold {
+  font-family: var(--font-bold);
+}
+.mgb-medium {
+  margin-bottom: 10px;
+}
+.mgb-big {
+  margin-bottom: 15px;
+}
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+/* helpers */
+
+.invoice {
+  font-family: 'Avenir';
+  height: 792px;
+  width: 612px;
+  padding: 40px 30px;
+  margin: auto;
+  overflow: hidden;
+  background-color: #fff;
+}
+.table-container {
+  border-bottom: 1px dashed #ddd;
+}
+.title-invoice {
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.invoice-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.caption {
+  font-size: 0.7rem;
+  color: #595959;
+  padding: 12px 0;
+}
+.invoice-header > img {
+  width: 100px;
+}
+.section-header {
+  background-color: #27298d;
+  color: #fff;
+  border-radius: 5.5px;
+  padding: 5px 10px;
+}
+.section-details {
+  padding: 5px 10px;
+}
+.invoice-content {
+  min-height: 15px;
+  font-size: 0.6rem;
+}
+.invoice-label {
+  margin-right: 2rem;
+  min-height: 15px;
+  font-size: 0.5rem;
+  width: 100px;
+  font-weight: bold;
+}
+.grid-section {
+  display: grid;
+  grid-template-columns: 66px 145px 129px 136px 1fr;
+  /* align-items: center; */
+}
+
+.contact-invoice {
+  width: 100%;
+}
+
+.summary {
+  display: grid;
+  padding-top: 10px;
+  margin-bottom: 50px;
+  justify-content: flex-end;
+  padding: 5px 10px;
+}
+.summary-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5rem;
+}
+.bank-details {
+  width: 70%;
+  background-color: #27298d;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+.signature-section {
+  width: 40%;
+
+  border-top: 1px dashed #ddd;
+}
+.grid-details {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-gap: 35px;
+}
+
+.signature {
+  position: relative;
+  margin-top: 65px;
+}
+
+.signature-top {
+  padding-top: 10px;
+}
+
+.signature-image {
+  position: absolute;
+  width: 150px;
+  margin-top: -3.1rem;
+}
+.signature-image > img {
+  /* margin-top: -2rem; */
+}

@@ -1,0 +1,349 @@
+// /* ABSTRACT */
+// @import './abstract/colors';
+// @import './abstract/utils';
+// @import './abstract/breakpoints';
+
+// /*utility classes*/
+// .pointer {
+//   cursor: pointer;
+// }
+
+// .margin-auto {
+//   margin: 0 auto;
+// }
+
+// .bold {
+//   font-weight: 700;
+// }
+
+// .bold-header {
+//   font-size: rem-calc(20);
+//   font-weight: 700;
+// }
+
+// .flex-grow-1 {
+//   flex-grow: 1;
+// }
+
+// .flex-grow-0 {
+//   flex-grow: 0;
+// }
+
+// .mr-1 {
+//   margin-right: 1rem;
+// }
+
+// .mr-0 {
+//   margin-right: 0 !important;
+// }
+
+// .overflow-auto {
+//   overflow: auto;
+// }
+
+// .mt-1 {
+//   margin-top: 1rem;
+// }
+
+// .fs-1 {
+//   font-size: 0.7rem;
+// }
+
+// .text-right {
+//   text-align: right;
+// }
+
+// .text-left {
+//   text-align: left;
+// }
+
+// .text-center {
+//   text-align: center;
+// }
+
+// .blue {
+//   color: color(blue);
+// }
+
+// .height-400 {
+//   height: 400px;
+// }
+
+// .min-width-100 {
+//   min-width: 80px;
+// }
+
+// .mt-2 {
+//   margin-top: 2rem;
+// }
+
+// .mt-3 {
+//   margin-top: 3rem;
+// }
+
+// .pb-2 {
+//   padding-bottom: 2rem;
+// }
+
+// .pb-1 {
+//   padding-bottom: 1rem;
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+
+//   to {
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes MoveUp {
+//   from {
+//     transform: translateY(40px);
+//     opacity: 0;
+//   }
+
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// hr {
+//   background-color: color(lightAsh);
+//   margin: 1rem 0;
+// }
+
+// .mb-0-5 {
+//   margin-bottom: 0.5rem;
+// }
+
+// .mb-0-3 {
+//   margin-bottom: 0.3rem;
+// }
+
+// .min-width-100 {
+//   min-width: 70px;
+// }
+
+// .min-width-120 {
+//   min-width: 100px;
+// }
+
+// .ml-0 {
+//   margin-left: 0;
+// }
+
+// .mt-2 {
+//   margin-top: 2rem;
+// }
+
+// .br-50 {
+//   border-radius: 2rem;
+// }
+
+// .text-uppercase {
+//   text-transform: uppercase;
+// }
+
+// .p-2 {
+//   padding: 2rem;
+// }
+
+// .mh-vh {
+//   height: 600px;
+// }
+
+// .position-relative {
+//   position: relative;
+// }
+
+// .position-absolute {
+//   position: absolute;
+// }
+
+// select:focus,
+// input[type='text']:focus,
+// input[type='name']:focus,
+// input[type='number']:focus,
+// input[type='email']:focus,
+// input[type='checkbox']:focus,
+// input[type='password']:focus {
+//   outline: none;
+//   // background-color: #fff;
+//   border: 1px solid #36b37e;
+//   border-radius: 5px;
+// }
+
+// .mt-0 {
+//   margin-top: 0;
+// }
+
+// .mr-0-5 {
+//   margin-right: 0.5rem;
+// }
+
+// .mx-auto {
+//   margin: 0 auto;
+// }
+
+// .w-300 {
+//   width: 300px;
+// }
+
+// .br-0-3 {
+//   border-radius: 0.3rem;
+//   border: 1px solid rgba(97, 128, 213, 0.2);
+// }
+
+// .w-50 {
+//   width: 50%;
+// }
+
+// .mx-0 {
+//   margin-left: 0;
+//   margin-right: 0;
+// }
+
+// .px-1 {
+//   padding-left: 1rem;
+//   padding-right: 1rem;
+// }
+
+// .p-4 {
+//   padding: 4rem;
+// }
+
+// .max-height-unset {
+//   max-height: unset;
+// }
+
+// .mb-2 {
+//   margin-bottom: 2rem;
+// }
+
+// .my-2 {
+//   margin-top: 2rem;
+//   margin-bottom: 2rem;
+// }
+
+// .mx-2 {
+//   margin: 0 2rem;
+// }
+
+// .mx-1 {
+//   margin: 0 1rem;
+// }
+
+// .mb-1 {
+//   margin-bottom: 0.7rem;
+// }
+
+// .text-capitalize {
+//   text-transform: capitalize;
+// }
+
+// .min-width-200 {
+//   min-width: 130px;
+// }
+
+// .w-100 {
+//   width: 100%;
+// }
+
+// .min-width-110 {
+//   min-width: 110px;
+// }
+
+// .mt-0-5 {
+//   margin-top: 0.5rem;
+// }
+
+// .mb-1-5 {
+//   margin-bottom: 1.5rem;
+// }
+
+// .my-1 {
+//   margin-top: 1rem;
+//   margin-bottom: 1rem;
+// }
+
+// .p-1 {
+//   padding: 1rem;
+// }
+
+// //colors
+
+// .text-gray {
+//   color: color(subtleGray);
+// }
+
+// .text-blue {
+//   color: color(blue);
+// }
+
+// .text-yellow {
+//   color: color(yellow);
+// }
+
+// .text-green {
+//   color: color(green);
+// }
+
+// .bg-transparent {
+//   background-color: transparent;
+// }
+
+// .text-white {
+//   color: color(white);
+// }
+
+// //fonts
+// .small-font {
+//   font-size: 0.9rem;
+//   line-height: 1.3rem;
+// }
+
+// .m-fs {
+//   font-size: 0.9rem;
+// }
+
+// .fs-0-8 {
+//   font-size: 0.8rem;
+// }
+
+// .font-bold {
+//   font-weight: 800 !important;
+// }
+
+// .customer__analytics__label {
+//   padding: 0.3rem 0.5rem;
+//   border-radius: 0.3rem;
+//   font-size: 0.7rem;
+// }
+
+// .label__red {
+//   color: color(red) !important;
+//   background-color: rgba(255, 81, 81, 0.51) !important;
+// }
+
+// .label__green {
+//   color: color(green) !important;
+//   background-color: rgba(54, 179, 126, 0.4) !important;
+// }
+
+// .label__blue {
+//   color: color(blue) !important;
+//   background-color: rgba(41, 72, 155, 0.3) !important;
+// }
+
+// .label__yellow {
+//   color: color(yellow) !important;
+//   background-color: rgba(252, 171, 49, 0.59) !important;
+// }
+
+// .text-light-gray {
+//   color: color(lightGray);
+// }

@@ -8,9 +8,5 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "../../components/Card/Card";
 
 export default function Notifications() {
-   return (
-    <Card>
-  
-         </Card>
-  );
+  return <Card></Card>;
 }

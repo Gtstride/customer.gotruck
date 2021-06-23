@@ -1,0 +1,60 @@
+/* -> Minimal CSS Reset */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: var(--white);
+  font-size: 62.5%;
+  font-weight: 400;
+  font-style: normal;
+  font-family: var(--font-default);
+  line-height: 1.1;
+  background-color: var(--page-background-color);
+}
+
+body * {
+  font-family: var(--font-default);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 7rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.height-half {
+  height: 40vh;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.block {
+  max-width: calc(1200px - 40px);
+  margin: 0 auto;
+  padding: 0 20px;
+}

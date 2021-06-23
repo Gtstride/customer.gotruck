@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
 const FormStyle = styled.div`
-  padding: 40px 0;
+  padding: 10px 0;
+  margin: 10px 0;
 
   ${props =>
     props.position === 'sticky' &&
@@ -16,6 +17,7 @@ const FormStyle = styled.div`
   #registerForm,
   #authForm {
     width: 500px;
+    // background-color: white
   }
 
   .formContentBlock {
@@ -121,7 +123,7 @@ const FormStyle = styled.div`
     font-family: 'Avenir';
     background-color: transparent;
     border-radius: inherit;
-    padding: 8px 15px;
+    // padding: 8px 15px;
   }
 
   textarea {

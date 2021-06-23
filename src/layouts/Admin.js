@@ -1,23 +1,23 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-// creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
-// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import bgImage from "../assets/img/sidebar-2.jpg";
+import logo from "../assets/img/logo-green.png";
+import styles from "../assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
 // core components
 import Navbar from "../components/Navbars/Navbar";
 import Footer from "../components/Footer/Footer.js";
 import Sidebar from "../components/Sidebar/Sidebar.js";
 
-
+// Routes
 import routes from "../Routes.js";
 
-import styles from "../assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
-import bgImage from "../assets/img/sidebar-2.jpg";
-import logo from "../assets/img/gotruck-logo.png";
+
+
 
 let ps;
 
@@ -49,16 +49,16 @@ export default function Admin({ ...rest }) {
   // states and functions
   const [image] = React.useState(bgImage);
   const [color] = React.useState("blue");
-  const [fixedClasses, setFixedClasses] = React.useState("dropdown show");
+  // const [fixedClasses, setFixedClasses] = React.useState("dropdown show");
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleFixedClick = () => {
-    if (fixedClasses === "dropdown") {
-      setFixedClasses("dropdown show");
-    } else {
-      setFixedClasses("dropdown");
-    }
-  };
+  // const handleFixedClick = () => {
+  //   if (fixedClasses === "dropdown") {
+  //     setFixedClasses("dropdown show");
+  //   } else {
+  //     setFixedClasses("dropdown");
+  //   }
+  // };
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -92,7 +92,7 @@ export default function Admin({ ...rest }) {
     <div className={classes.wrapper}>
       <Sidebar
         routes={routes}
-        logoText={"Gotruck"}
+        logoText={"CUST. DASHBOARD"}
         logo={logo}
         image={image}
         handleDrawerToggle={handleDrawerToggle}

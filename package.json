@@ -1,5 +1,5 @@
 {
-  "name": "customer.gotruck",
+  "name": "customer.uzi-logistics",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -43,6 +43,7 @@
     "react-scripts": "4.0.1",
     "react-toastify": "^6.2.0",
     "styled-components": "^5.2.1",
+    "sweetalert2": "^10.15.5",
     "web-vitals": "^0.2.4",
     "yup": "^0.32.8"
   },
